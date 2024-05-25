@@ -15,8 +15,8 @@ app.use(express.json());
 app.use("/api/v1/user",userroute);
 app.use("/api/v1/task",taskroute);
 
-app.listen(process.env.PORT,()=>{
-    console.log("running");
+app.listen(process.env.PORT,(r)=>{
+    console.log(` the port is running in ${process.env.NODE_ENV} mode`);
 });
 
 app.get("/",(req,res)=>{
