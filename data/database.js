@@ -8,8 +8,8 @@ config({
 export const usedata =()=>{
     mongoose.connect(process.env.MONGO_URL,{
         dbName:"api_todo",
-    }).then(()=>{
-        console.log("db connected");
+    }).then((c)=>{
+        console.log(`database is connected to ${c.connection.host}`);
     }).catch((e)=>{
         console.log(e);
         process.exit(1);
