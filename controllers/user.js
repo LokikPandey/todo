@@ -22,7 +22,7 @@ User = await user.create({ name, email, password: hashedpass });
 }
 catch(error)
 {
-    next(error);
+    res.status(500).json({ message: error.message });
 }
 };
 
