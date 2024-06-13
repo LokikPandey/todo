@@ -10,7 +10,11 @@ config({
 
 const app = express();
 app.use(cookieParser());
-app.use(cors());
+
+app.use(cors({
+    origin: 'https://your-frontend-domain.com',
+    credentials: true
+  }));
 
 app.use(express.json());
 app.use("/api/v1/user",userroute);
